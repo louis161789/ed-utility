@@ -4,8 +4,8 @@
 
 import numpy as np
 
-kgrid = np.loadtxt('kgrid100.dat',skiprows=2, usecols=[0,1,2])  #initial k grid
-winind = np.loadtxt('window_indices.dat', dtype=int)       #indices of k points to select
+kgrid = np.loadtxt('kgrid200.hole.cart.dat',skiprows=2, usecols=[0,1,2])  #initial k grid
+winind = np.loadtxt('window_indices.hole.200.cart.dat', dtype=int)       #indices of k points to select
 
 newkgrid = []
 
@@ -21,4 +21,4 @@ newkgrid=np.asarray(newkgrid)
 print('K_POINTS crystal')
 print(len(newkgrid))
 for i in range(len(newkgrid)):
-    print('{:9.6f} {:9.6f} {:9.6f} {:9.6f}'.format(*newkgrid[i,:], 1.0/len(newkgrid)))
+    print('{0:9.6f} {1:9.6f} {2:9.6f} {3:9.6f}'.format(*newkgrid[i,:], 1.0/len(newkgrid)))

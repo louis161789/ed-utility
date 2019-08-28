@@ -1,10 +1,11 @@
 #Script to create uniformly distributed k points around a particular point
 #for k points around band extrema
+#for crystal units in QE
 
 import numpy as np
 
 ###############################################
-def crystalcoordgrid(density, width, k0):       #print grid in crystal coordinates
+def crystalcoordgrid(density, width, k0):
  
     N =  int(density*width)                   #no. of sample points in 1D (NxNxN)
     step = width/N                        #spacing between k points
@@ -25,12 +26,12 @@ def crystalcoordgrid(density, width, k0):       #print grid in crystal coordinat
     for x in range(N):
         for y in range(N):
             for z in range(N):
-                print('{:9.6f} {:9.6f} {:9.6f} {:9.6f}'.format(kx[0]+k_init[0]+step*x, kx[1]+k_init[1]+step*y, kx[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
-                print('{:9.6f} {:9.6f} {:9.6f} {:9.6f}'.format(kmx[0]+k_init[0]+step*x, kmx[1]+k_init[1]+step*y, kmx[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
-                print('{:9.6f} {:9.6f} {:9.6f} {:9.6f}'.format(ky[0]+k_init[0]+step*x, ky[1]+k_init[1]+step*y, ky[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
-                print('{:9.6f} {:9.6f} {:9.6f} {:9.6f}'.format(kmy[0]+k_init[0]+step*x, kmy[1]+k_init[1]+step*y, kmy[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
-                print('{:9.6f} {:9.6f} {:9.6f} {:9.6f}'.format(kz[0]+k_init[0]+step*x, kz[1]+k_init[1]+step*y, kz[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
-                print('{:9.6f} {:9.6f} {:9.6f} {:9.6f}'.format(kmz[0]+k_init[0]+step*x, kmz[1]+k_init[1]+step*y, kmz[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
+                print('{0:9.6f} {1:9.6f} {2:9.6f} {3:9.6f}'.format(kx[0]+k_init[0]+step*x, kx[1]+k_init[1]+step*y, kx[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
+                print('{0:9.6f} {1:9.6f} {2:9.6f} {3:9.6f}'.format(kmx[0]+k_init[0]+step*x, kmx[1]+k_init[1]+step*y, kmx[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
+                print('{0:9.6f} {1:9.6f} {2:9.6f} {3:9.6f}'.format(ky[0]+k_init[0]+step*x, ky[1]+k_init[1]+step*y, ky[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
+                print('{0:9.6f} {1:9.6f} {2:9.6f} {3:9.6f}'.format(kmy[0]+k_init[0]+step*x, kmy[1]+k_init[1]+step*y, kmy[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
+                print('{0:9.6f} {1:9.6f} {2:9.6f} {3:9.6f}'.format(kz[0]+k_init[0]+step*x, kz[1]+k_init[1]+step*y, kz[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
+                print('{0:9.6f} {1:9.6f} {2:9.6f} {3:9.6f}'.format(kmz[0]+k_init[0]+step*x, kmz[1]+k_init[1]+step*y, kmz[2]+k_init[2]+step*z, 1.0/(N*N*N*6)))
             
 def gammacrysgrid(density,width):  #print coarse grid for gamma point 
 
@@ -43,7 +44,7 @@ def gammacrysgrid(density,width):  #print coarse grid for gamma point
     for x in range(N+1):        #to include gamma point
         for y in range(N+1):
             for z in range(N+1):
-                print('{:9.6f} {:9.6f} {:9.6f} {:9.6f}'.format(k_init[0]+step*x, k_init[1]+step*y, k_init[2]+step*z, 1.0/(N*N*N)))
+                print('{0:9.6f} {1:9.6f} {2:9.6f} {3:9.6f}'.format(k_init[0]+step*x, k_init[1]+step*y, k_init[2]+step*z, 1.0/(N*N*N)))
         
 def gammacartgrid(density,cartwidth):  #print coarse grid for gamma point - cube in cartesian coords
 
@@ -56,12 +57,12 @@ def gammacartgrid(density,cartwidth):  #print coarse grid for gamma point - cube
     for x in range(N+1):        #to include gamma point
         for y in range(N+1):
             for z in range(N+1):
-                print('{:9.6f} {:9.6f} {:9.6f} {:9.6f}'.format(k_init[0]+step*x, k_init[1]+step*y, k_init[2]+step*z, 1.0))
+                print('{0:9.6f} {1:9.6f} {2:9.6f} {3:9.6f}'.format(k_init[0]+step*x, k_init[1]+step*y, k_init[2]+step*z, 1.0))
                 
         
 #################################################
                 
-density = 60                #1D equivalent density to calculate for (NxNxN)
+density = 100                #1D equivalent density to calculate for (NxNxN)
 
 #################################################
 

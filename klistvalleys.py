@@ -23,4 +23,4 @@ newkgrid=np.asarray(newkgrid)
 print('K_POINTS crystal')
 print(len(newkgrid))
 for i in range(len(newkgrid)):
-    print('{:9.6f} {:9.6f} {:9.6f} {:9.6f}'.format(*newkgrid[i,:], 1.0/len(newkgrid)))
+    print('{0:9.6f} {1:9.6f} {2:9.6f} {3:9.6f}'.format(*newkgrid[i,:], 1.0/len(newkgrid)))
